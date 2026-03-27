@@ -6,8 +6,8 @@ export const questions = [
   {
     id: 1,
     question: "What is my favorite color?",
-    options: ["Blue", "Red", "Green", "Purple"],
-    correctAnswer: "Blue"
+    options: ["Black", "Red", "Green", "Purple"],
+    correctAnswer: "Black"
   },
   {
     id: 2,
