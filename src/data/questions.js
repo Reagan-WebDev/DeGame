@@ -33,10 +33,16 @@ export const questions = [
     options: ["Loud Chewing", "Being Late", "Clutter", "Bad Grammar"],
     correctAnswer: "Loud Chewing"
   },
-    {
+  {
     id: 5,
-    question: "Whatcar you think I like like most?",
+    question: "What car you think I like like most?",
     options: ["TX", "Mercedes", "Range Rover", "BMW"],
     correctAnswer: "Range Rover"
+  },
+  {
+    id: 5,
+    question: "What is my Full Name?",
+    options: ["Reagan Otieno", "Reagan Omondi Otieno", "Reagan Odhiambo Otieno", "Reagan Oluoch Otieno"],
+    correctAnswer: "Reagan Oluoch Otieno"
   }
 ];
