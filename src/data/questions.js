@@ -32,5 +32,11 @@ export const questions = [
     question: "What is my biggest pet peeve?",
     options: ["Loud Chewing", "Being Late", "Clutter", "Bad Grammar"],
     correctAnswer: "Loud Chewing"
+  },
+    {
+    id: 5,
+    question: "Whatcar you think I like like most?",
+    options: ["TX", "Mercedes", "Range Rover", "BMW"],
+    correctAnswer: "Range Rover"
   }
 ];
