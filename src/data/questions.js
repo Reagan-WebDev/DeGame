@@ -34,13 +34,13 @@ export const questions = [
     correctAnswer: "Loud Chewing"
   },
   {
-    id: 5,
+    id: 6,
     question: "What car you think I like like most?",
     options: ["TX", "Mercedes", "Range Rover", "BMW"],
     correctAnswer: "Range Rover"
   },
   {
-    id: 5,
+    id: 7,
     question: "What is my Full Name?",
     options: ["Reagan Otieno", "Reagan Omondi Otieno", "Reagan Odhiambo Otieno", "Reagan Oluoch Otieno"],
     correctAnswer: "Reagan Oluoch Otieno"
