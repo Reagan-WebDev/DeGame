@@ -58,9 +58,15 @@ export const questions = [
     correctAnswer: "B-"
   },
   {
-    id: 8,
+    id: 10,
     question: "Where do I fall in the birth order in our family?",
     options: ["First", "Third", "Second", "Last"],
     correctAnswer: "Third"
+  },
+  {
+    id: 11,
+    question: "Which Course Am I Pursuing?",
+    options: ["Education", "Computer Science", "Telecommunication and IT", "Information Technology"],
+    correctAnswer: "Telecommunication and IT"
   }
 ];
