@@ -161,6 +161,11 @@ p {
   color: var(--neon-red);
   text-shadow: 0 0 10px rgba(255,7,58,0.8);
 }
+@media (max-width: 768px){
+  .cert-red h2, .cert-yellow h2, .cert-green h2{
+    font-size: 1.5rem;
+  }
+}
 
 /* Animations */
 @keyframes fadeIn {
