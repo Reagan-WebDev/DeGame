@@ -29,9 +29,9 @@ export const questions = [
   },
   {
     id: 5,
-    question: "What is my biggest pet peeve?",
-    options: ["Loud Chewing", "Being Late", "Clutter", "Bad Grammar"],
-    correctAnswer: "Loud Chewing"
+    question: "Which wa my High School?",
+    options: ["Alliance High School", "Maseno High School", "Homabay School", "Ruaraka High School"],
+    correctAnswer: "Ruaraka High School"
   },
   {
     id: 6,
