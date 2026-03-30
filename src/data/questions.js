@@ -50,5 +50,17 @@ export const questions = [
     question: "Which Department I serve In?",
     options: ["Ushering Department", "Misson Department", "Worship Department", "ICT Department"],
     correctAnswer: "Ushering Department"
+  },
+  {
+    id: 9,
+    question: "Which Grade I attained in my KCSE?",
+    options: ["A", "B+", "B-", "C+"],
+    correctAnswer: "B-"
+  },
+  {
+    id: 8,
+    question: "Where do I fall in the birth order in our family?",
+    options: ["First", "Third", "Second", "Last"],
+    correctAnswer: "Third"
   }
 ];
