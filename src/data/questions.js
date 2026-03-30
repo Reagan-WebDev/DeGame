@@ -12,14 +12,14 @@ export const questions = [
   {
     id: 2,
     question: "Where did we first meet?",
-    options: ["Coffee Shop", "Library", "College", "Online"],
-    correctAnswer: "Coffee Shop"
+    options: ["Bash", "Library", "College", "Online"],
+    correctAnswer: "Bash"
   },
   {
     id: 3,
     question: "What is my absolute favorite food?",
-    options: ["Pizza", "Sushi", "Tacos", "Pasta"],
-    correctAnswer: "Sushi"
+    options: ["Pizza", "Pilau", "Fried Chicken", "Beef Stew"],
+    correctAnswer: "Beef Stew"
   },
   {
     id: 4,
@@ -44,5 +44,11 @@ export const questions = [
     question: "What is my Full Name?",
     options: ["Reagan Otieno", "Reagan Omondi Otieno", "Reagan Odhiambo Otieno", "Reagan Oluoch Otieno"],
     correctAnswer: "Reagan Oluoch Otieno"
+  },
+  {
+    id: 8,
+    question: "Which Department I serve In?",
+    options: ["Ushering Department", "Misson Department", "Worship Department", "ICT Department"],
+    correctAnswer: "Ushering Department"
   }
 ];
