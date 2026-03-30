@@ -88,6 +88,7 @@ export default function App() {
       {gameState === 'start' && <StartScreen onStart={handleStart} />}
       {gameState === 'playing' && (
         <QuestionCard 
+          key={currentQuestionIndex}
           questionData={questions[currentQuestionIndex]}
           currentQuestionIndex={currentQuestionIndex}
           totalQuestions={questions.length}
