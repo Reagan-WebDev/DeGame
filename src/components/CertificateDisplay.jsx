@@ -59,6 +59,16 @@ export default function CertificateDisplay({ type, score, title, message, showCo
       </div>
       
       <p style={{ fontSize: '1.2rem', marginTop: '20px', fontWeight: 'bold' }}>{message}</p>
+      
+      {/* Background music that plays automatically only for the Green Certificate */}
+      {type === 'green' && (
+        <audio 
+          autoPlay 
+          loop 
+          src="/MySong.mp3" 
+          style={{ display: 'none' }}
+        />
+      )}
     </div>
   );
 }
