@@ -22,16 +22,43 @@ export default function App() {
     const storedDisqualified = localStorage.getItem('isDisqualified') === 'true';
     const storedYellows = parseInt(localStorage.getItem('consecutiveYellows') || '0', 10);
     const storedLastResult = localStorage.getItem('lastResult');
+    const wasGameInProgress = localStorage.getItem('gameInProgress') === 'true';
 
     if (storedDisqualified) {
       setIsDisqualified(true);
       setGameState('disqualified');
+    } else if (wasGameInProgress) {
+      const currentRefreshCount = parseInt(localStorage.getItem('refreshCount') || '0', 10) + 1;
+      localStorage.setItem('refreshCount', currentRefreshCount.toString());
+      
+      if (currentRefreshCount >= 3) {
+        // Cheater detected: refreshed page too many times
+        setIsDisqualified(true);
+        setGameState('disqualified');
+        localStorage.setItem('isDisqualified', 'true');
+        localStorage.removeItem('gameInProgress');
+        localStorage.removeItem('refreshCount');
+        localStorage.removeItem('currentQuestionIndex');
+        localStorage.removeItem('currentScore');
+      } else {
+        // Resume game where they left off
+        const savedIndex = parseInt(localStorage.getItem('currentQuestionIndex') || '0', 10);
+        const savedScore = parseInt(localStorage.getItem('currentScore') || '0', 10);
+        setCurrentQuestionIndex(savedIndex);
+        setScore(savedScore);
+        setGameState('playing');
+      }
     }
+    
     setConsecutiveYellows(storedYellows);
     setLastResult(storedLastResult);
   }, []);
 
   const handleStart = () => {
+    localStorage.setItem('gameInProgress', 'true');
+    localStorage.setItem('refreshCount', '0');
+    localStorage.setItem('currentQuestionIndex', '0');
+    localStorage.setItem('currentScore', '0');
     setGameState('playing');
     setCurrentQuestionIndex(0);
     setScore(0);
@@ -39,16 +66,25 @@ export default function App() {
 
   const handleAnswer = (selectedOption) => {
     const isCorrect = selectedOption === questions[currentQuestionIndex].correctAnswer;
-    if (isCorrect) setScore(prev => prev + 1);
+    const newScore = score + (isCorrect ? 1 : 0);
+    
+    if (isCorrect) setScore(newScore);
 
     if (currentQuestionIndex + 1 < questions.length) {
-      setCurrentQuestionIndex(prev => prev + 1);
+      const nextIndex = currentQuestionIndex + 1;
+      setCurrentQuestionIndex(nextIndex);
+      localStorage.setItem('currentQuestionIndex', nextIndex.toString());
+      localStorage.setItem('currentScore', newScore.toString());
     } else {
-      calculateResult(score + (isCorrect ? 1 : 0));
+      calculateResult(newScore);
     }
   };
 
   const calculateResult = (finalScore) => {
+    localStorage.removeItem('gameInProgress');
+    localStorage.removeItem('refreshCount');
+    localStorage.removeItem('currentQuestionIndex');
+    localStorage.removeItem('currentScore');
     const finalPercentage = (finalScore / questions.length) * 100;
     setPercentage(Math.round(finalPercentage));
 
